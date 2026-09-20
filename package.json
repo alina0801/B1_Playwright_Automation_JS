@@ -1,0 +1,22 @@
+{
+  "name": "vscprojects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tests-all-headless" : "npx playwright test",
+    "tests-all-headed" : "npx playwright test --headed",
+    "report" : "npx playwright show-report",
+    "smoke test" : "npx playwright test --grep @smoke",
+    "regres test" : "npx playwright test --grep @regression",
+    "test-regres-or-smoke" : "npx playwright test -g \"@regresion|@smoke\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.20.2"
+  }
+}
