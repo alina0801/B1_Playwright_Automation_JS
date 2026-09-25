@@ -1,3 +1,9 @@
+import "dotenv/config";
+
+//Use the following two statements together. if you want the .env file override anything else including settings.json file set up
+// import dotenv from "dotenv";
+// dotenv.config ({override:true});
+
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
@@ -29,6 +35,9 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
+    APP_USER: process.env.APP_USER,
+    APP_PASS: process.env.APP_PASS,
+    BASE_URL: process.env.BASE_URL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
