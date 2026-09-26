@@ -1,8 +1,8 @@
-import "dotenv/config";
+//import "dotenv/config";
 
 //Use the following two statements together. if you want the .env file override anything else including settings.json file set up
-// import dotenv from "dotenv";
-// dotenv.config ({override:true});
+import dotenv from "dotenv";
+dotenv.config({ override: true });
 
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
