@@ -38,6 +38,7 @@ export default defineConfig({
     APP_USER: process.env.APP_USER,
     APP_PASS: process.env.APP_PASS,
     BASE_URL: process.env.BASE_URL,
+    //baseURL: process.env.LC_PRACTICE_BASE_URL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',

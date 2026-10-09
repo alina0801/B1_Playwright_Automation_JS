@@ -11,6 +11,9 @@ test.describe("Array of Elements", () => {
     test.beforeEach(async ({ page }) => {
 
         await page.goto(`${process.env.LC_PRACTICE_BASE_URL}`);
+
+        // .all() returns Promise -> therefore it has to use await to fullfill either rejecte or success. Then it will get the elements
+
         allLinks = await page.locator('ul.list-group.list-group-flush a').all();
 
     });
@@ -24,6 +27,9 @@ test.describe("Array of Elements", () => {
     });
 
     test('Verify that each link in the <ul> tag is visible and clickable', async ({ page }) => {
+
+        // for of loop 
+
         let i = 1;
         for (let eachElement of allLinks) {
             await expect(eachElement).toBeVisible();
@@ -37,6 +43,12 @@ test.describe("Array of Elements", () => {
             let eachElemHrefValue = await eachElem.getAttribute("href");
             expect(eachElemHrefValue).not.toBeNull();
             console.log(eachElemHrefValue);
+
+            //The code below is exact same as above
+            expect(await eachElem.getAttribute("href")).not.toBeNull(); 
+
+            // another way to aseert 
+            await expect(eachElem).toHaveAttribute("href");
         }
     });
 });
