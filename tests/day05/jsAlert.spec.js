@@ -72,4 +72,8 @@ test.describe ("Alerts Practice", () => {
         await expect(resultTextElem).toContainText(promtText); 
 
     });
+
+    test ("Practice tools", async ({page}) => {
+
+});
 });
